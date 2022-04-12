@@ -1,0 +1,32 @@
+@media only screen   
+and (min-device-width : 320px)   
+and (max-device-width : 500px)  
+{
+    .container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .resList{
+            margin-top: 2rem;
+            width: 100%;
+        }
+    } 
+}
+
+@media only screen   
+and (min-device-width : 500px)   
+and (max-device-width : 2000px)  
+{
+
+.container{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .resList{
+        margin-top: 2rem;
+        width: 100%;
+    }
+}
+}

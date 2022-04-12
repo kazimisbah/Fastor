@@ -1,0 +1,54 @@
+@media only screen   
+and (min-device-width : 320px)   
+and (max-device-width : 500px)  
+{
+    .Auth{
+        width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .Container{
+            width: 80%;
+            height: 30%;
+            border-radius: 4px;
+            // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            // background: white;
+            // background: red;
+            .LogoContainer{
+                // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                    }
+        }
+    }
+}
+
+
+@media only screen   
+and (min-device-width : 500px)   
+and (max-device-width : 2000px)  
+{
+.Auth{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .Container{
+        width: 20%;
+        height: 30%;
+        // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        // background: white;
+        border-radius: 4px;
+        // background: red;
+        .LogoContainer{
+            // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                }
+    }
+}
+}

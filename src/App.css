@@ -1,0 +1,17 @@
+@media only screen   
+and (min-device-width : 320px)   
+and (max-device-width : 480px)  
+{
+  .App{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+  }
+}
+.App{
+  height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
