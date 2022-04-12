@@ -1,11 +1,31 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import "./Share.scss"
 import Logo from "../../asstes/logo.png"
+import html2canvas from "html2canvas";
+import {WhatsappShareButton} from "react-share"
 import * as htmlToImage from 'html-to-image';
-// import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
+import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 
 function Share(props){
+const [isMobile,setIsMobile]=useState(false)
+useEffect(()=>{
+    if(deviceType()==="desktop"){
+        setIsMobile(false)
+    }else{
+        setIsMobile(true)
+    }
+},[])
 
+const deviceType = () => {
+    const ua = navigator.userAgent;
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+        return "tablet";
+    }
+    else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+        return "mobile";
+    }
+    return "desktop";
+};
    const close = ()=>{
        console.log("close", props)
        props.unselect()
@@ -70,6 +90,10 @@ function Share(props){
         }
     }();
     const shareshot=async()=>{
+        if(!isMobile){
+            alert("Share is not available make sure you are using in mobile browser")
+             return 
+        } 
         var node = document.getElementById('previwimg');
         // let res=await fetch("https://benkaiser.github.io/web-share-images/nacho.jpg")
         // const blob = await res.blob();
@@ -108,7 +132,7 @@ function Share(props){
             </div>
 
             <div className="actions">
-            <button style={{backgroundColor:'#d596a4'}} onClick={shareshot}>Share</button>
+            <button style={{backgroundColor:'#d596a4'}} onClick={shareshot}>{isMobile?"Share":"Share available only on mobile browser"}</button>
             <button onClick={close}>Close</button>
             <button onClick={logout}>Logout</button>
 
