@@ -35,11 +35,7 @@ function Home(props){
              <div style={{height:'10%', padding:'1px 25px 1px 25px'}}>
                  <CarouselPage/>
              </div>
-
             {/* <List sx={{ width: '100%', bgcolor: 'background.paper' }}> */}
-    
-      
-    
               {list.map((store,key)=>{
                   return(
                       <Restaurants  select={(data)=>setSelected(data)} {...store} key={key}/>

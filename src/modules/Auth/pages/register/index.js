@@ -16,9 +16,13 @@ function Register(props){
     }
    const response  = await apiPost(API_ENDPOINT_AUTH_VERIFY_OTP, payload)
    if(response.status_code == 200){
+       console.log("resp", response)
   localStorage.setItem("register", JSON.stringify(response));
   localStorage.setItem("token", response.data.token)
-  window.location.reload()
+  setTimeout(()=>{
+    window.location.reload()
+
+  },1000)
    }else{
        alert("Incorrect OTP")
    }
